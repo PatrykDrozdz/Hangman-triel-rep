@@ -97,8 +97,8 @@ function check(value){
     for(i=0; i<lenght; i++){
         
         if(pass.charAt(i)===letters[value]){
-            //pass_covered = pass_covered.set_sign(i, letters[value]);
-            alert(i);
+            pass_covered = pass_covered.set_sign(i, letters[value]);
+            //alert(i);
         }
         
     }
