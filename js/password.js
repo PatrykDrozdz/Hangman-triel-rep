@@ -46,7 +46,7 @@ letters[34] = "Ź";
 
 for(i=0; i<lenght; i++){
     
-    if(pass.charAt(i)==" "){
+    if(pass.charAt(i)===" "){
         pass_covered = pass_covered + " ";
     } else {
         pass_covered = pass_covered + "-";
@@ -68,7 +68,7 @@ function write_alfabet(){
          
         div_cont = div_cont +'<div class="letter" id="'+let+'" onclick="check('+i+')">'+letters[i]+'</div>';
         
-        if((i+1)%7==0){
+        if((i+1)%7===0){
         
             div_cont = div_cont +'<div class="last-letter"></div>';
             
@@ -90,14 +90,15 @@ String.prototype.set_sing = function(place, sign){
         return this.substr(0, place) + sign + this.substr(place+1);
     }
     
-}
+};
 
 function check(value){
     
     for(i=0; i<lenght; i++){
         
-        if(pass.charAt(i)==letters[value]){
-            pass_covered = pass_covered.set_sign(i, letters[value]);
+        if(pass.charAt(i)===letters[value]){
+            //pass_covered = pass_covered.set_sign(i, letters[value]);
+            alert(i);
         }
         
     }
