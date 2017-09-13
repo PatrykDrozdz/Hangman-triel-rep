@@ -82,7 +82,7 @@ function write_alfabet(){
     
 }
 
-String.prototype.set_sing = function(place, sign){
+String.prototype.set_sign = function(place, sign){
     
     if(place>this.length -1 ){
         return this.toString();
@@ -94,16 +94,42 @@ String.prototype.set_sing = function(place, sign){
 
 function check(value){
     
+    var gotten = false;
+    
     for(i=0; i<lenght; i++){
         
         if(pass.charAt(i)===letters[value]){
+            
             pass_covered = pass_covered.set_sign(i, letters[value]);
-            //alert(i);
+            gotten = true;
+            
         }
         
     }
     
-    write_pass();
+    if(gotten===true){
+        
+        var let = "letter" + value;
+        
+        document.getElementById(let).style.background = "#009900";
+        document.getElementById(let).style.color = "#00ff00";
+        document.getElementById(let).style.border = "3px solid #00ff00";
+        document.getElementById(let).style.cursor = "default";
+        
+        write_pass();
+    
+    } else {
+        
+        var let = "letter" + value;
+        
+        document.getElementById(let).style.background = "#ff0000";
+        document.getElementById(let).style.color = "#ff9999";
+        document.getElementById(let).style.border = "3px solid #ff9999";
+        document.getElementById(let).style.cursor = "default";
+        
+    }
+    
+    
     
 }
 

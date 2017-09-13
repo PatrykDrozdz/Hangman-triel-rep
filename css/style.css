@@ -2,6 +2,7 @@ body{
     background-color: #491217;
     color: white;
     text-align: center;
+    font-weight: 700;
 }
 
 header{
@@ -53,7 +54,7 @@ footer{
     border: 3px solid;
     float: left;
     cursor: pointer;
-    border-radius: 15px;
+    border-radius: 10px;
 }
 
 .letter:hover{
