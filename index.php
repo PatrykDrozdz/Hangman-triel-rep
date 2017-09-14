@@ -28,8 +28,8 @@
                 
             </header>
        
-            <div class="left-cont conts">
-                left
+            <div class="left-cont conts" id="hanging">
+                
             </div>
             
             <div class="right-cont conts" id="alfabet">

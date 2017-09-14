@@ -2,6 +2,8 @@ var  pass = "Próbna Hasła";
 
 pass = pass.toUpperCase();
 
+var how_many_chances = 0;
+
 var lenght = pass.length;
 
 var pass_covered="";
@@ -110,27 +112,47 @@ function check(value){
     if(gotten===true){
         
         var let = "letter" + value;
-        
+
         document.getElementById(let).style.background = "#009900";
         document.getElementById(let).style.color = "#00ff00";
         document.getElementById(let).style.border = "3px solid #00ff00";
         document.getElementById(let).style.cursor = "default";
-        
+        document.getElementById(let).setAttribute("onclick", ";");
+            
         write_pass();
+        
     
     } else {
         
-        var let = "letter" + value;
+        how_many_chances++;
         
+        var let = "letter" + value;
+
         document.getElementById(let).style.background = "#ff0000";
         document.getElementById(let).style.color = "#ff9999";
         document.getElementById(let).style.border = "3px solid #ff9999";
         document.getElementById(let).style.cursor = "default";
-        
+        document.getElementById(let).setAttribute("onclick", ";");//ustawianie funkcji danego pojemnika
+            
+        var image = "<img src='images/"+how_many_chances+".jpeg'/>";
+            
+        document.getElementById("hanging").innerHTML = image;
+
     }
     
+             
+        
+    if(pass===pass_covered){
+        document.getElementById("alfabet").innerHTML='Gratulacje! Zgadłeś hasło\n\
+        </br></br><span class="reset" onclick="location.reload()">CHCESZ ZAGRAĆ JESZCZE RAZ?</span>';
+    }
+        
+    if(how_many_chances>=12){
+        document.getElementById("alfabet").innerHTML='Przegrana\n\
+        </br></br><span class="restart" onclick="location.reload()">CHCESZ SPRÓBOWAĆ JESZCZE RAZ?</span>';
+    }
     
-    
+
 }
 
 window.onload = write_alfabet;

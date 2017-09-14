@@ -64,3 +64,20 @@ footer{
 .last-letter{
     clear: both;
 }
+
+.reset{
+    cursor: pointer;
+    font-size: 48px;
+    color: green;
+}
+
+.restart{
+    cursor: pointer;
+    font-size: 48px;
+    color: red;
+}
+
+.reset:hover .restart:hover{
+    color: white;
+}
+
